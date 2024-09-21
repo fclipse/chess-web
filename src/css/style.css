@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+aside {
+    display: flex;
+    flex-flow: column wrap;
+
+    width: 15rem;
+    background-color: black;
+    color: white;
+
+    padding: 1rem;
+    box-sizing: border-box;
+}
+#clock {
+    height: 3rem;
+    text-align: center;
+}
+#controller {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+#tip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#board{
+    display: flex;
+    flex-flow: column wrap;
+}
+.row{
+    display: flex;
+}
+.col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid black;
+    /* box-sizing: border-box;
+    cursor: pointer; */
+    font-size: 3rem;
+}
+.tile.active{
+    background-color: #6382fb;
+}
+.tile.target{
+    background-color: #a0b3ff;
+}

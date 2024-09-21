@@ -1,0 +1,16 @@
+button{
+    width: 100%;
+}
+
+aside>*>button{
+    height: 2rem;
+    font-weight: bold;
+}
+
+.hidden{
+    display: none;
+}
+
+a{
+    color:white;
+}

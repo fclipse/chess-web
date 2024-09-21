@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Web</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/aside.css">
+    <script src="src/js/model/model.js"></script>
+    <script src="src/js/util/util.js"></script>
+</head>
+
+<body>
+    <aside>
+        <h2>게임 경과 시작</h2>
+        <section id="clock"></section>
+        <section id="controller">
+            <button id="game-start-button">시작</button>
+            <button id="game-init-button">초기화</button>
+        </section>
+        <header>
+            <h2>설명</h2>
+            <a id="tip-button" href="#">숨기기</a>
+        </header>
+        <ul id="tip">
+            <li>게임 시작 버튼: 게임을 시작합니다.</li>
+            <li>초기화 버튼을 누르면 게임 및 기보가 모두 초기화됩니다.</li>
+            <li>규칙은 일반적인 룰을 따르며, 사용자간 제한 시간은 따로 없습니다.</li>
+        </ul>
+        <h2>기보 기록</h2>
+        <section id="record">
+            <ul id="record-list"></ul>
+        </section>
+    </aside>
+    <main>
+        <h1>체스 게임</h1>
+        <section id="board"></section>
+        <section id="game-info">
+            <h2>게임 정보</h2>
+            <ul>
+                <li>현재 플레이어: <span id="current-player">흰색</span></li>
+                <li>현재 턴: <span id="current-turn">1</span>턴</li>
+                <li>게임 상태: <span id="game-state">진행중</span></li>
+            </ul>
+        </section>
+    </main>
+    <script src="src/js/util/elements.js"></script>
+    <script src="src/js/util/clock.js"></script>
+    <script src="src/js/validate.js"></script>
+    <script src="src/js/init.js"></script>
+    <script src="src/main.js"></script>
+    <script src="src/js/aside.js"></script>
+</body>
+
+</html>
