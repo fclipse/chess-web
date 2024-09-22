@@ -7,44 +7,90 @@
     <title>Chess Web</title>
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/aside.css">
+    <link rel="stylesheet" href="src/css/global.css">
     <script src="src/js/model/model.js"></script>
     <script src="src/js/util/util.js"></script>
+    <script src="src/js/map.js"></script>
 </head>
 
 <body>
     <aside>
-        <h2>게임 경과 시작</h2>
-        <section id="clock"></section>
         <section id="controller">
-            <button id="game-start-button">시작</button>
-            <button id="game-init-button">초기화</button>
+            <h2>게임 컨트롤러</h2>
+            <div class="buttons">
+                <fieldset>
+                    <legend>게임 설정</legend>
+                    <select id="game-mode">
+                        <option value="" selected hidden disabled>모드 설정</option>
+                        <option value="1">정규 모드 (2인)</option>
+                        <option value="2">자유 모드</option>
+                        <option value="3">연습 모드</option>
+                    </select>
+                    <select id="timer" disabled>
+                        <option value="" selected hidden disabled>플레이 시간 설정 (사용자별)</option>
+                        <option value="1">1분</option>
+                        <option value="3">3분</option>
+                        <option value="5">5분</option>
+                        <option value="10">10분</option>
+                        <option value="15">15분</option>
+                        <option value="30">30분</option>
+                        <option value="60">60분</option>
+                        <option value="90">90분</option>
+                        <option value="120">120분</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>게임 시작/초기화</legend>
+                    <button id="game-start-button">게임 시작</button>
+                    <button id="game-init-button">초기화</button>
+                </fieldset>
+            </div>
         </section>
-        <header>
-            <h2>설명</h2>
-            <a id="tip-button" href="#">숨기기</a>
-        </header>
-        <ul id="tip">
-            <li>게임 시작 버튼: 게임을 시작합니다.</li>
-            <li>초기화 버튼을 누르면 게임 및 기보가 모두 초기화됩니다.</li>
-            <li>규칙은 일반적인 룰을 따르며, 사용자간 제한 시간은 따로 없습니다.</li>
-        </ul>
-        <h2>기보 기록</h2>
         <section id="record">
+            <h2>기보 기록</h2>
             <ul id="record-list"></ul>
         </section>
     </aside>
     <main>
         <h1>체스 게임</h1>
         <section id="board"></section>
-        <section id="game-info">
-            <h2>게임 정보</h2>
+
+    </main>
+    <aside>
+        <section id="clock">
+            <header>
+                <h2>게임 경과 시간</h2>
+                <a id="clock-button" class="hide-button" href="#" data-target="#clock ul">접기</a>
+            </header>
             <ul>
-                <li>현재 플레이어: <span id="current-player">흰색</span></li>
-                <li>현재 턴: <span id="current-turn">1</span>턴</li>
-                <li>게임 상태: <span id="game-state">진행중</span></li>
+                <li>total: <span id="white-clock">00:00:00</span></li>
+                <li>흰색: <span id="white-clock">00:00:00</span></li>
+                <li>검은색: <span id="black-clock">00:00:00</span></li>
             </ul>
         </section>
-    </main>
+        <section id="game-info">
+            <header>
+                <h2>게임 정보</h2>
+                <a id="game-info-button" class="hide-button" data-target="#game-info ul" href="#">접기</a>
+            </header>
+            <ul>
+                <li>현재 플레이어: <span id="current-player">흰색</span></li>
+                <li>현재 라운드: <span id="current-turn">1</span></li>
+                <li>게임 상태: <span id="game-state">시작 전</span></li>
+            </ul>
+        </section>
+        <section id="game-tips">
+            <header>
+                <h2>설명</h2>
+                <a id="tip-button" class="hide-button" href="#" data-target="#tip">접기</a>
+            </header>
+            <ul id="tip">
+                <li>게임 시작 버튼: 게임을 시작합니다.</li>
+                <li>초기화 버튼을 누르면 게임 및 기보가 모두 초기화됩니다.</li>
+                <li>규칙은 일반적인 룰을 따르며, 사용자간 제한 시간은 따로 없습니다.</li>
+            </ul>
+        </section>
+    </aside>
     <script src="src/js/util/elements.js"></script>
     <script src="src/js/util/clock.js"></script>
     <script src="src/js/validate.js"></script>

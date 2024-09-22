@@ -1,4 +1,6 @@
 // 게임 시작
+const gameStartButton = document.querySelector('#game-start-button');
+const gameInitButton = document.querySelector('#game-init-button');
 const startNewGame = () => {
     // 게임 시작 버튼 설정, 타이머 시작/중단 설정
     if (gameStartButton.classList.contains('playing')) {
@@ -25,7 +27,7 @@ const startNewGame = () => {
     }
 }
 
-gammeStartButton.addEventListener('click', startNewGame);
+gameStartButton.addEventListener('click', startNewGame);
 // 게임 초기화 함수 -> 새로고침
 const initGame = () => {
     location.reload();
@@ -55,13 +57,13 @@ const remoteTargetTileColor = () => {
         targetTile.classList.remove('target');
     });
 }
-const setTargetTileColor = (tile) => {
-    // a1을 0,0으로 , h8을 7,7로 변환
-    const x = tile.id.split('-')[1] - 1;
-    const y = 7 - tile.id.split('-')[2];
+// const setTargetTileColor = (tile) => {
+//     // a1을 0,0으로 , h8을 7,7로 변환
+//     const x = tile.id.split('-')[1] - 1;
+//     const y = 7 - tile.id.split('-')[2];
 
-    // 갈 수 있는 칸들
-    let currTile = [x, y];
-    let possibleMovements;
-    if (pieceMap[tile.innerText].type === 'p') {
-        possibleMovements = pieceMovement
+//     // 갈 수 있는 칸들
+//     let currTile = [x, y];
+//     let possibleMovements;
+//     if (pieceMap[tile.innerText].type === 'p') {
+//         possibleMovements = pieceMovement
